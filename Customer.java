@@ -61,4 +61,7 @@ public class Customer implements Comparable<Customer>{
 	public void setCreditHistory(CreditHistory aHistory) {
 		history = aHistory;
 	}
+	public CreditHistory getCreditHistory (){
+		return history;
+	}
 }
