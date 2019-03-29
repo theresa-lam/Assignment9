@@ -20,14 +20,18 @@ public class Customer implements Comparable<Customer>{
 		id = anID;
 	}
 	
-	public int compareTo(Customer st){
-		if (history.getCreditRating() < st.history.getCreditRating()) {
-			return 1;
-		} else if (history.getCreditRating() == st.history.getCreditRating()) {
-			return 0;
-		} else {
-			return -1;
+		@Override
+	public int compareTo(Customer other) {
+		int nameOrder = this.name.compareTo((other.name));
+		if (nameOrder == 0)
+		{
+			return this.id - other.id;
 		}
+		else 
+		{
+			return nameOrder;
+		}
+	}
 		
 		
 	}
