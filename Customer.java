@@ -1,7 +1,7 @@
 public class Customer implements Comparable<Customer>{
 	private String name = "";
 	private int id = 0;
-	private CreditHistory history;
+	CreditHistory history;
 	
 	public Customer()
 	{
@@ -34,7 +34,6 @@ public class Customer implements Comparable<Customer>{
 	}
 		
 		
-	}
 	public void setName(String aName) {
 		name = aName;
 	}
@@ -64,4 +63,6 @@ public class Customer implements Comparable<Customer>{
 	public CreditHistory getCreditHistory (){
 		return history;
 	}
+
+	
 }
