@@ -1,10 +1,10 @@
 import java.util.Random;
+import java.lang.Object;
 
-public abstract class BankAccount {
+public abstract class BankAccount extends Object {
 	private double balance;
 	private String accountNumber;
 	private Customer accountHolder;
-
 	
 	public BankAccount(){
 		accountNumber = new Random().nextInt(9999) + 1 + "";
@@ -78,6 +78,16 @@ public abstract class BankAccount {
 	
 	public String getAccountNumber() {
 		return accountNumber;
+	}
+
+	@Override
+	public boolean equals(Object obj){
+    	return true;
+	}
+
+	@Override
+	public int hashCode(){
+    	return accountNumber.hashCode();
 	}
 	
 	public String toString() {
