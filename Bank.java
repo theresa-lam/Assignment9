@@ -32,10 +32,6 @@ public class Bank {
 	}
 
 
-	
-
-	
-
     public void addAccount(BankAccount account) throws DuplicateAccountException {
         if (accounts.add(account)){
             accounts.add(account);
@@ -46,7 +42,7 @@ public class Bank {
     }
 	
 
-		 public BankAccount[] getAccounts() {
+    public BankAccount[] getAccounts() {
 		        Iterator iterator = accounts.iterator();
 		        BankAccount[] anArray = new BankAccount[accounts.size()];
 		        while (iterator.hasNext()) {
