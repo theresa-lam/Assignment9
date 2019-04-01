@@ -100,6 +100,9 @@ public abstract class BankAccount {
 	
 	@Override
 	public boolean equals(Object obj){
+    	if (this.hashCode() == obj.hashCode()){
+    		return true;
+		}
 		if (obj== bankAccount && obj == accountNumber){
 			return true;
 		}
