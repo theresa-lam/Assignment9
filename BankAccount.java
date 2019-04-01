@@ -1,10 +1,11 @@
+import java.util.HashSet;
 import java.util.Random;
-import java.lang.Object;
 
-public abstract class BankAccount extends Object {
+public abstract class BankAccount {
 	private double balance;
 	private String accountNumber;
 	private Customer accountHolder;
+	HashSet<BankAccount> bankAccount = new HashSet<BankAccount>();
 	
 	public BankAccount(){
 		accountNumber = new Random().nextInt(9999) + 1 + "";
@@ -79,19 +80,25 @@ public abstract class BankAccount extends Object {
 	public String getAccountNumber() {
 		return accountNumber;
 	}
-
-	@Override
-	public boolean equals(Object obj){
-    	return true;
-	}
-
-	@Override
-	public int hashCode(){
-    	return accountNumber.hashCode();
-	}
 	
 	public String toString() {
 		return "(" + accountHolder.toString() + ") " + accountNumber + ": " + balance;
 	}
+	public void addAccountHolder (BankAccount account) {
+		
+	}
+	@Override
+	public int hashCode(){
+	
+    	return (int) accountNumber.hashCode();
+	}
+	@Override
+	public boolean equals(Object obj){
+		if (obj== bankAccount && obj == accountNumber)
+    	return true;
+		else 
+			return false;
+	}
+	
 	
 }
