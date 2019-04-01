@@ -3,10 +3,12 @@ import java.util.Iterator;
 import java.util.PriorityQueue;
 import java.util.TreeSet;
 
-public class Bank {
+public class Bank  {
 	PriorityQueue<Customer> queuedCustomers = new PriorityQueue<Customer>();
 	private TreeSet<Customer> customers = new TreeSet<Customer>();
 	private HashSet<BankAccount> accounts = new HashSet<BankAccount>();
+	private Iterator iterator = accounts.iterator();
+	private BankAccount[] anArray = new BankAccount[accounts.size()];
 	
 	public void queueCustomer(Customer a) {
 		queuedCustomers.add(a);
@@ -43,14 +45,13 @@ public class Bank {
 	
 
     public BankAccount[] getAccounts() {
-		        Iterator iterator = accounts.iterator();
-		        BankAccount[] anArray = new BankAccount[accounts.size()];
-		        while (iterator.hasNext()) {
-		            for (int i=0; i<=accounts.size(); i++){
-		                anArray[i] = (BankAccount)iterator.next();
+		   
+		   while (iterator.hasNext()) {
+		       for (int i=0; i<=accounts.size(); i++){
+		            anArray[i] = (BankAccount)iterator.next();
 		            }
 		        }
-		        return anArray;
+		       return anArray;
 		    }
 
 
