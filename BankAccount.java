@@ -100,10 +100,12 @@ public abstract class BankAccount {
 	
 	@Override
 	public boolean equals(Object obj){
-		if (obj== bankAccount && obj == accountNumber)
-    		return true;
-		else 
+		if (obj== bankAccount && obj == accountNumber){
+			return true;
+		}
+		else{
 			return false;
+		}
 	}
 	
 	
